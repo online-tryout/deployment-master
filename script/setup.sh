@@ -55,5 +55,5 @@ else
     exit 1
 fi
 
-docker-compose up -d --build
-docker image prune -f
+sudo docker-compose up -d --build
+sudo docker image prune -f
