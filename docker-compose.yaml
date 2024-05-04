@@ -1,0 +1,28 @@
+services:
+  parsing-sheets-api:
+    container_name: "parsing-sheets-api"
+    build: ./parsing-sheets-api
+    ports:
+      - "8081:8081"
+    restart: unless-stopped
+    env_file:
+      - .env
+    depends_on:
+      - rabbit_mq
+  
+  rabbit_mq:
+    container_name: "rabbit_mq"
+    image: "rabbitmq:3.12.13-management-alpine"
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+      - rabbitmq_log:/var/log/rabbitmq
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "5672:5672" 
+      - "15672:15672"
+
+volumes:
+  rabbitmq_data:
+  rabbitmq_log:
