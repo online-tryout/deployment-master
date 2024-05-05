@@ -15,7 +15,7 @@ if ! command -v docker-compose &> /dev/null; then
     sudo apt-get install -y docker-compose
 fi
 
-# Step 3: Change directory to your account directory
+# Step 3: Change directory to indra_mahaarta22 directory
 sudo useradd -m -s /bin/bash indra_mahaarta22
 USER_HOME="/home/indra_mahaarta22"
 if [ "$(pwd)" != "$USER_HOME" ]; then
@@ -29,14 +29,14 @@ if [ ! -d "deployment-master" ]; then
     git clone https://github.com/online-tryout/deployment-master.git
 fi
 
-# Step 5: Download .env file from URL if it does not exist
+# Step 5: Download .env file from bucket if it does not exist
 cd deployment-master
 ENV_FILE=".env"
 
 if [ ! -f "$ENV_FILE" ]; then
     echo "Downloading $ENV_FILE from URL..."
 
-    # Download .env file from URL using curl
+    # Download .env file from bucket using curl
     curl -o "$ENV_FILE" https://storage.googleapis.com/online-tryout/.env
 
     echo "$ENV_FILE downloaded"
