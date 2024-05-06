@@ -33,7 +33,8 @@ clone_or_pull_repo() {
 }
 
 declare -a repos=( 
-    "parsing-sheets-api|https://github.com/online-tryout/parsing-sheets-api.git|app.env"
+    "parsing-sheets-api|https://github.com/online-tryout/parsing-sheets-api.git|app.env",
+    "auth-api|https://github.com/online-tryout/online-tryout-auth|app.env"
 )
 
 for repo in "${repos[@]}"; do
