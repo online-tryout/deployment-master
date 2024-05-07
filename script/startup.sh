@@ -29,9 +29,9 @@ if [ ! -d "deployment-master" ]; then
     git clone https://github.com/online-tryout/deployment-master.git
 fi
 
-# Step 6: Add user to docker group
+# Step 5: Add user to docker group
 sudo usermod -aG docker indra_mahaarta22
 
-# Step 7: Run script inside the project
+# Step 6: Run script inside the project
 cd deployment-master
 ./script/setup.sh
