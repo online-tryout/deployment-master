@@ -23,6 +23,15 @@ services:
       - "5672:5672" 
       - "15672:15672"
 
+  auth-api:
+    container_name: "auth-api"
+    build: ./auth-api
+    ports:
+      - "8082:8082"
+    restart: unless-stopped
+    env_file:
+      - .env
+
 volumes:
   rabbitmq_data:
   rabbitmq_log:
