@@ -1,3 +1,4 @@
 .env
 
 /parsing-sheets-api
+/auth-api
