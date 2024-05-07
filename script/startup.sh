@@ -29,9 +29,11 @@ if [ ! -d "deployment-master" ]; then
     git clone https://github.com/online-tryout/deployment-master.git
 fi
 
-# Step 5: Add user to docker group
+# Step 5: Add user to docker group & add another permission
 sudo usermod -aG docker indra_mahaarta22
+sudo chown -R indra_mahaarta22:indra_mahaarta22 /home/indra_mahaarta22/deployment-master
+sudo chmod -R 755 /home/indra_mahaarta22/deployment-master
 
 # Step 6: Run script inside the project
-cd deployment-master
-./script/setup.sh
+cd deployment-master || { echo "Failed to change directory to deployment-master"; exit 1; }
+./script/setup.sh || { echo "Failed to run setup script"; exit 1; }
