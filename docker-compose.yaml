@@ -1,4 +1,16 @@
 services:
+  online-tryout:
+    container_name: "online-tryout"
+    build: ./online-tryout
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    env_file:
+      - .env
+    depends_on:
+      - parsing-sheets-api
+      - auth-api
+
   parsing-sheets-api:
     container_name: "parsing-sheets-api"
     build: ./parsing-sheets-api
