@@ -28,3 +28,12 @@ services:
     restart: unless-stopped
     env_file:
       - .env
+
+  db-api:
+    container_name: "db-api"
+    build: ./db-api
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    env_file:
+      - .env
