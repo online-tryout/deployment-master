@@ -15,9 +15,9 @@ if ! command -v docker-compose &> /dev/null; then
     sudo apt-get install -y docker-compose
 fi
 
-# Step 3: Change directory to indra_mahaarta22 directory
-sudo useradd -m -s /bin/bash indra_mahaarta22
-USER_HOME="/home/indra_mahaarta22"
+# Step 3: Change directory to indramhrt directory
+sudo useradd -m -s /bin/bash indramhrt
+USER_HOME="/home/indramhrt"
 if [ "$(pwd)" != "$USER_HOME" ]; then
     echo "Changing directory to $USER_HOME"
     cd "$USER_HOME" || { echo "Failed to change directory"; exit 1; }
@@ -30,9 +30,9 @@ if [ ! -d "deployment-master" ]; then
 fi
 
 # Step 5: Add user to docker group & add another permission
-sudo usermod -aG docker indra_mahaarta22
-sudo chown -R indra_mahaarta22:indra_mahaarta22 /home/indra_mahaarta22/deployment-master
-sudo chmod -R 755 /home/indra_mahaarta22/deployment-master
+sudo usermod -aG docker indramhrt
+sudo chown -R indramhrt:indramhrt /home/indramhrt/deployment-master
+sudo chmod -R 755 /home/indramhrt/deployment-master
 
 # Step 6: Run script inside the project
 cd deployment-master || { echo "Failed to change directory to deployment-master"; exit 1; }
