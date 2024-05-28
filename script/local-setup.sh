@@ -3,10 +3,7 @@
 echo "Start to execute script"
 echo "============================================================"
 
-# echo "Downloading $ENV_FILE from URL..."
-# ENV_FILE=".env"
-# curl -o "$ENV_FILE" https://storage.googleapis.com/online-tryout/.env
-# echo "$ENV_FILE downloaded"
+docker-compose down
 
 clone_or_pull_repo() {
     local dir=$1
