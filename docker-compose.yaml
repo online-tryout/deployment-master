@@ -11,6 +11,15 @@ services:
       - parsing-sheets-api
       - auth-api
 
+  db-api:
+    container_name: "db-api"
+    build: ./db-api
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    env_file:
+      - .env
+      
   parsing-sheets-api:
     container_name: "parsing-sheets-api"
     build: ./parsing-sheets-api
@@ -29,11 +38,11 @@ services:
     env_file:
       - .env
 
-  db-api:
-    container_name: "db-api"
-    build: ./db-api
+  tryout-api:
+    container_name: "tryout-api"
+    build: ./tryout-api
     ports:
-      - "8080:8080"
+      - "8083:8083"
     restart: unless-stopped
     env_file:
       - .env
