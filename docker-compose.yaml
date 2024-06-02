@@ -10,6 +10,18 @@ services:
     depends_on:
       - parsing-sheets-api
       - auth-api
+  
+  admin-app:
+    container_name: "admin-app"
+    build: ./admin-app
+    ports:
+      - "3001:3001"
+    restart: unless-stopped
+    env_file:
+      - .env
+    depends_on:
+      - parsing-sheets-api
+      - auth-api
 
   db-api:
     container_name: "db-api"

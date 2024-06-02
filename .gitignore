@@ -1,5 +1,8 @@
 
+/online-tryout
+/admin-app
+/db-api
 /parsing-sheets-api
 /auth-api
-/online-tryout
-/db-api
+/tryout-api
+/payment-api

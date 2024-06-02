@@ -35,9 +35,10 @@ clone_or_pull_repo() {
 }
 
 declare -a repos=( 
+    "online-tryout|https://github.com/online-tryout/online-tryout|.env"
+    "admin-app|https://github.com/online-tryout/admin-app.git|.env"
     "parsing-sheets-api|https://github.com/online-tryout/parsing-sheets-api.git|app.env"
     "auth-api|https://github.com/online-tryout/online-tryout-auth|app.env"
-    "online-tryout|https://github.com/online-tryout/online-tryout|.env"
     "db-api|https://github.com/online-tryout/online-tryout-db-service.git|.env"
     "tryout-api|https://github.com/online-tryout/online-tryout-backend-api.git|.env"
 )
