@@ -58,3 +58,12 @@ services:
     restart: unless-stopped
     env_file:
       - .env
+  
+  payment-api:
+    container_name: "payment-api"
+    build: ./payment-api
+    ports:
+      - "8084:8084"
+    restart: unless-stopped
+    env_file:
+      - .env

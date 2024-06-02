@@ -41,6 +41,7 @@ declare -a repos=(
     "auth-api|https://github.com/online-tryout/online-tryout-auth|app.env"
     "db-api|https://github.com/online-tryout/online-tryout-db-service.git|.env"
     "tryout-api|https://github.com/online-tryout/online-tryout-backend-api.git|.env"
+    "payment-api|https://github.com/online-tryout/payment-api.git|.env"
 )
 
 for repo in "${repos[@]}"; do
